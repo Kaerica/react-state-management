@@ -1,32 +1,116 @@
-# React + TypeScript + Vite
+# React State Management: useContext and useReducer
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Overview
 
-Currently, two official plugins are available:
+This project demonstrates how to manage state in a React application using the `useContext` and `useReducer` hooks.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The application includes a theme switcher and a task manager. It demonstrates how React can share state between components and manage more complex state updates.
 
-## React Compiler
+## Learning Objectives
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Understand React's `useContext` hook.
+* Understand React's `useReducer` hook.
+* Share state between components using Context API.
+* Manage task state using a reducer function.
+* Apply light and dark themes.
+* Organize a React application using reusable components.
 
-## Expanding the Oxlint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+* React
+* TypeScript
+* Vite
+* CSS Modules
+* React Hooks
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+## Features
+
+### Theme Management
+
+* Switch between light and dark themes.
+* Share the current theme through React Context.
+* Access theme state using a custom `useTheme` hook.
+
+### Task Management
+
+* Add tasks.
+* Remove tasks.
+* Manage task updates using `useReducer`.
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── Navbar.tsx
+│   ├── Navbar.module.css
+│   ├── TaskManager.tsx
+│   └── TaskManager.module.css
+├── constants/
+│   └── theme.ts
+├── context/
+│   └── ThemeContext.tsx
+├── reducers/
+│   └── taskReducer.ts
+├── App.tsx
+├── App.css
+└── index.css
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Getting Started
+
+### 1. Clone the repository
+
+Replace the URL below with your actual GitHub repository URL.
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+```
+
+### 2. Open the project
+
+```bash
+cd react-state-management
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in your terminal.
+
+## How It Works
+
+### useContext
+
+The Context API allows components to access shared values without passing props through every level of the component tree.
+
+In this project, the theme context shares the current theme and the function used to change it.
+
+### useReducer
+
+The `useReducer` hook manages state using a reducer function.
+
+The task reducer receives the current state and an action, then returns the updated state. Actions are used to add or remove tasks.
+
+## Testing
+
+To check that the project builds successfully, run:
+
+```bash
+npm run build
+```
+
+Also test the application in your browser by switching themes and adding and removing tasks.
+
+## Author
+
+**Erica Ishimwe**
