@@ -1,0 +1,53 @@
+
+/* Main application layout */
+.app {
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light theme */
+.app.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark theme */
+.app.dark {
+  background-color: #242629;
+  color: #ffffff;
+}
+
+/* Main content area */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Main heading */
+.main-content h1 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+/* Description */
+.main-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .main-content {
+    padding: 25px 15px;
+  }
+
+  .main-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .main-content p {
+    font-size: 1rem;
+  }
+}
